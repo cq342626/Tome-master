@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/adapter_music_song_sheet_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/adapter_music_song_sheet_playCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_margin="10dp"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="播放次数" />
+
+
+        <ImageView
+            android:id="@+id/adapter_music_song_sheet_user_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="10dp"
+            android:padding="3dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/adapter_music_song_sheet_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="44dp"
+            android:gravity="center_vertical"
+            android:text="用户名" />
+
+        <ImageView
+            android:id="@+id/adapter_music_song_sheet_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"
+            android:src="@mipmap/ic_launcher" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/adapter_music_song_sheet_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mn_home"
+            android:icon="@mipmap/home"
+            android:title="首页">
+        </item>
+        <item
+            android:id="@+id/mn_movie"
+            android:icon="@mipmap/movie"
+            android:title="电影">
+        </item>
+        <item
+            android:id="@+id/mn_music"
+            android:icon="@mipmap/music"
+            android:title="音乐">
+        </item>
+        <item
+            android:id="@+id/mn_picture"
+            android:icon="@mipmap/myinformation"
+            android:title="图片">
+        </item>
+        <item
+            android:id="@+id/mn_guess"
+            android:icon="@mipmap/guess_like"
+            android:title="其他">
+        </item>
+        <item
+            android:icon="@mipmap/music"
+            android:title="其他">
+        </item>
+
+
+    </group>
+    <item android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/mn_switch_theme"
+                android:checkable="true"
+                android:icon="@drawable/iconfont_skin"
+                android:title="主题换肤" />
+            <item
+                android:icon="@mipmap/about"
+                android:title="关于" />
+
+            <item
+                android:icon="@mipmap/out"
+                android:title="注销"></item>
+        </menu>
+    </item>
+</menu>

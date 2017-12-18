@@ -1,0 +1,8 @@
+<com.example.library.foldablelayout.FoldableListLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/foldable_list"
+    android:layout_height="wrap_content" >
+
+    <include layout="@layout/toolbar" />
+
+</com.example.library.foldablelayout.FoldableListLayout>

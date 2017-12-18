@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tome-master</string>
+    <string name="app_picture">图片</string>
+    <string name="app_music">音乐</string>
+    <string name="download">下载</string>
+    <string name="chooses">多选</string>
+</resources>

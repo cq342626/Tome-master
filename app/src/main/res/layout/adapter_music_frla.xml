@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingTop="@dimen/dp_3">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/music_frlaa_FloatingActionButton"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@color/md_amber_100"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <TextView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textSize="10sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/music_frlaa_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/app_music"
+        android:textSize="10sp" />
+
+</LinearLayout>

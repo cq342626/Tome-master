@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/adapter_music_songer_list_item_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="@dimen/dp_10"
+        android:padding="@dimen/dp_8" />
+
+
+    <ImageView
+        android:id="@+id/adapter_music_songer_list_item_src"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@mipmap/chevron_right"
+        app:layout_constraintBottom_toBottomOf="@id/adapter_music_songer_list_item_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/adapter_music_songer_list_item_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@id/adapter_music_songer_list_item_image"
+        app:layout_constraintLeft_toRightOf="@id/adapter_music_songer_list_item_image"
+        app:layout_constraintRight_toLeftOf="@id/adapter_music_songer_list_item_src"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@color/md_grey_500"
+        app:layout_constraintLeft_toRightOf="@id/adapter_music_songer_list_item_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adapter_music_songer_list_item_image" />
+
+</android.support.constraint.ConstraintLayout>
