@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 /**
  * 时间 ：2017/11/20  16:49
  * 作者 ：陈奇
- * 作用 ：
+ * 作用 ：排行榜适配器
  */
 public class MusicRLFAdapter extends RecyclerView.Adapter<MusicRLFAdapter.MyHolder> {
 

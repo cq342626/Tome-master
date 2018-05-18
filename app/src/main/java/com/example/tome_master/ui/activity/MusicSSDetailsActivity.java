@@ -1,7 +1,6 @@
 package com.example.tome_master.ui.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -26,7 +25,6 @@ import com.example.tome_master.utils.Util;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -76,6 +74,12 @@ public class MusicSSDetailsActivity extends MusicBaseActivity implements MusicRL
             specialid = intent.getIntExtra("specialid", 0);
 
         setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -150,12 +154,16 @@ public class MusicSSDetailsActivity extends MusicBaseActivity implements MusicRL
         onNetPlayClick(position + 1);
     }
 
-    @OnClick({R.id.activity_music_ss_details_play_choose, R.id.activity_music_ss_details_play_download})
+    @OnClick({R.id.activity_music_ss_details_play_src, R.id.activity_music_ss_details_play_choose, R.id.activity_music_ss_details_play_download})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.activity_music_ss_details_play_src:
+                onNetPlayClick(0);
+                break;
             case R.id.activity_music_ss_details_play_choose:
                 break;
             case R.id.activity_music_ss_details_play_download:
+                startActivity(new Intent(MusicSSDetailsActivity.this, MusicDownLoadActivity.class));
                 break;
         }
     }

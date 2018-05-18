@@ -2,6 +2,7 @@ package com.example.tome_master.network;
 
 
 import android.accounts.NetworkErrorException;
+import android.support.annotation.NonNull;
 
 import java.io.File;
 import java.net.ConnectException;
@@ -9,7 +10,6 @@ import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;
 
 import io.reactivex.Observer;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
 public abstract class BaseObserver<T> implements Observer<T> {

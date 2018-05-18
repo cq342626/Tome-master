@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 /**
  * 时间 ：2017/11/30  11:11
  * 作者 ：陈奇
- * 作用 ：
+ * 作用 ：歌单适配器
  */
 public class MusicSongSheetAdapter extends RecyclerView.Adapter<MusicSongSheetAdapter.ViewHolders> {
 

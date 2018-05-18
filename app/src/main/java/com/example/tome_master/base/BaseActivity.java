@@ -2,25 +2,20 @@ package com.example.tome_master.base;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.library.skinloader.base.SkinBaseActivity;
 import com.example.tome_master.R;
-import com.example.tome_master.utils.StatusBarSetting;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -39,6 +34,7 @@ public abstract class BaseActivity extends SkinBaseActivity {
 
     public Context context;
     private Unbinder mUnbinder;
+    private View view;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +42,7 @@ public abstract class BaseActivity extends SkinBaseActivity {
         doBeforeSetcontentView();
         setContentView(getLayoutId());
         mUnbinder = ButterKnife.bind(this);
+        view = getWindow().getDecorView();
         context = this;
         this.initPresenter();
         this.initView();
@@ -134,4 +131,71 @@ public abstract class BaseActivity extends SkinBaseActivity {
     public void ToastShow(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
+
+    //询问获取手机状态权限的参数
+    protected final int REQUEST_PHONE_CODE = 1000;
+    //询问获取拨打电话权限的参数
+    protected final int REQUEST_CALL_PHONE_CODE = 1001;
+    //询问打开手机系统相机的参数
+    protected final int REQUEST_PHOTO_CAMEAR_CODE = 1002;
+    //询问打开手机系统相册的参数
+    protected final int REQUEST_PHONE_ALBUM_CODE = 1003;
+    //询问打开手机外部储存权限的参数
+    protected final int REQUEST_PHONE_WRITE_CODE = 1004;
+
+    /**
+     * 打开权限询问
+     *
+     * @param permission
+     */
+    protected void requestPermission(String permission, int position) {
+        if (lacksPermission(permission)) {
+            //进入到这里代表没有权限.
+            requestThisPermission(permission, position);
+        }
+    }
+
+    //判断是否需要添加需要权限
+    protected boolean lacksPermission(String permission) {
+        if (Build.VERSION.SDK_INT >= 23) {
+            return ContextCompat.checkSelfPermission(BaseActivity.this, permission) ==
+                    PackageManager.PERMISSION_DENIED;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 询问是否打开权限
+     */
+    public void requestThisPermission(final String permission, final int position) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(BaseActivity.this, permission)) {
+            Snackbar.make(view, "没有此权限，请开启权限", Snackbar.LENGTH_INDEFINITE).
+                    setAction("好的", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ActivityCompat.requestPermissions(BaseActivity.this, new String[]{permission}, position);
+                        }
+                    }).show();
+        } else {
+            ActivityCompat.requestPermissions(BaseActivity.this, new String[]{permission}, position);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            //用户同意授权
+            requestPermissionsResultSuccess(requestCode);
+        } else {
+            requestPermissionsResultFail(requestCode);
+        }
+    }
+
+    /**
+     * 用户同意该权限后调用的方法
+     */
+    protected void requestPermissionsResultSuccess(int position) {}
+
+    protected void requestPermissionsResultFail(int position) {}
 }

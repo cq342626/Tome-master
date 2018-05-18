@@ -20,18 +20,14 @@ import com.example.tome_master.bean.music.Music;
 import com.example.tome_master.greendao.MusicDaoManager;
 import com.example.tome_master.ui.activity.ChangeSkinActivity;
 import com.example.tome_master.ui.activity.MovieDisplayActivity;
-import com.example.tome_master.ui.activity.MusicLocalActivity;
 import com.example.tome_master.ui.activity.MusicMainActivity;
-import com.example.tome_master.ui.activity.MusicNetWorkActivity;
 import com.example.tome_master.ui.activity.OtherActivity;
 import com.example.tome_master.ui.activity.PictureActivity;
 import com.example.tome_master.utils.ConfigureUtil;
 import com.example.tome_master.utils.StatusBarSetting;
-import com.example.tome_master.utils.Util;
 
 import java.io.File;
 import java.util.LinkedList;
-import java.util.List;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
@@ -85,7 +81,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         musicDao = new MusicDaoManager();
         Observable.create(new ObservableOnSubscribe<LinkedList<Music>>() {
             @Override
-            public void subscribe(@io.reactivex.annotations.NonNull ObservableEmitter<LinkedList<Music>> e) throws Exception {
+            public void subscribe(@NonNull ObservableEmitter<LinkedList<Music>> e) throws Exception {
 
                 // 更新本地音乐数据
                 musicDao.update();
@@ -141,16 +137,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<LinkedList<Music>>() {
                     @Override
-                    public void onSubscribe(@io.reactivex.annotations.NonNull Disposable d) {
+                    public void onSubscribe(@NonNull Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@io.reactivex.annotations.NonNull LinkedList<Music> musics) {
+                    public void onNext(@NonNull LinkedList<Music> musics) {
                     }
 
                     @Override
-                    public void onError(@io.reactivex.annotations.NonNull Throwable e) {
+                    public void onError(@NonNull Throwable e) {
 
                     }
 

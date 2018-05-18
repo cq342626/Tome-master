@@ -28,7 +28,7 @@ import butterknife.BindView;
 /**
  * 时间 ：2017/11/22  9:23
  * 作者 ：陈奇
- * 作用 ：
+ * 作用 ：酷狗排行榜详情页
  */
 public class MusicRLDetailsActivity extends MusicBaseActivity implements MusicRLDetailsAdapter.OnClickRecyclerViewItemListener {
     private static final String TAG = "MusicRLDetailsActivity";
@@ -157,9 +157,13 @@ public class MusicRLDetailsActivity extends MusicBaseActivity implements MusicRL
     }
 
 
-    @Override
-    public void onClick(int position) {
+//    @Override
+//    public void onClick(int position) {
+//
+//    }
 
+    @Override
+    public void onClickItem(int position) {
         onNetPlayClick(position);
     }
 }

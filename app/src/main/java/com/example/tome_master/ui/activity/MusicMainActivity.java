@@ -41,7 +41,7 @@ public class MusicMainActivity extends MusicBaseActivity {
                 onBackPressed();
             }
         });
-        setToolbarStatus(toolbar);
+//        setToolbarStatus(toolbar);
         daoManager.initPlayMusic();
         Util.ALL_MUSIC_PLAY = daoManager.queryPlayList(1);
     }

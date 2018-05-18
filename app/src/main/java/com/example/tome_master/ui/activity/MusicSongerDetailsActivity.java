@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 /**
  * 时间 ：2017/12/13  11:22
  * 作者 ：陈奇
- * 作用 ：
+ * 作用 ：歌手详情页
  */
 public class MusicSongerDetailsActivity extends MusicBaseActivity implements MusicSDetailsAdapter.OnClickRecyclerViewItemListener {
     private static final String TAG = "MusicSongerDetailsActivity";
@@ -84,7 +84,7 @@ public class MusicSongerDetailsActivity extends MusicBaseActivity implements Mus
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                finish();
             }
         });
 

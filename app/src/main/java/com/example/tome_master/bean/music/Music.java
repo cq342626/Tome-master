@@ -1,5 +1,7 @@
 package com.example.tome_master.bean.music;
 
+import android.annotation.TargetApi;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 
@@ -39,6 +41,9 @@ public class Music implements Serializable {
 
 	@Transient
 	private String hash;
+
+	@Transient
+	private boolean choose = false;
 
 	public String getAuthor_id() {
 		return author_id;
@@ -164,6 +169,15 @@ public class Music implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public boolean isChoose() {
+		return choose;
+	}
+
+	public void setChoose(boolean choose) {
+		this.choose = choose;
+	}
+
 	@Generated(hash = 1291306183)
 	public Music(Long id, String song_id, String title, String author,
 			String author_id, String lrclink, String album_id, String album_title,
@@ -218,6 +232,7 @@ public class Music implements Serializable {
 				", listId=" + listId +
 				", isPlay=" + isPlay +
 				", hash='" + hash + '\'' +
+				", choose=" + choose +
 				'}';
 	}
 }

@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,16 +16,16 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <TextView
-            android:id="@+id/activity_music_download_choose_all"
+            android:id="@+id/activity_music_download_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="全选"
+            android:text="关闭"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_16" />
 
         <TextView
-            android:id="@+id/activity_music_download_"
+            android:id="@+id/activity_music_download_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -33,10 +34,11 @@
             android:textSize="@dimen/sp_18" />
 
         <TextView
+            android:id="@+id/activity_music_download_choose_All"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
-            android:text="关闭"
+            android:text="全选"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_16" />
     </FrameLayout>
@@ -47,13 +49,12 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:gravity="center"
-        android:padding="@dimen/dp_20"
         android:text="下载"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_18"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="@dimen/dp_0"
